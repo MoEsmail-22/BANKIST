@@ -28,6 +28,15 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+document.querySelector('.modal__form').addEventListener('click', function (e) {
+  if (!e.target.classList.contains('btn')) return;
+  alert(
+    `Fuck you ${document.querySelector('.in1').value}${
+      document.querySelector('.in2').value
+    }`
+  );
+});
+
 ////////////////////////////////////
 //menu
 
