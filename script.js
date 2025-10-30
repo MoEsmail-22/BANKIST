@@ -131,8 +131,12 @@ const featImg = document.querySelectorAll('.features__img');
 function showImg(entries, observer) {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
+
     e.target.src = e.target.dataset.src;
-    e.target.classList.remove('lazy-img');
+
+    e.target.addEventListener('load', function () {
+      e.target.classList.remove('lazy-img');
+    });
     observer.unobserve(e.target);
   });
 }
